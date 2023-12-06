@@ -29,9 +29,4 @@ public class PostService {
 
     }
 
-
-    public Optional<Post> jedenPost(String slug) {
-        return postRepository.findBySlug(slug);
-
-    }
 }

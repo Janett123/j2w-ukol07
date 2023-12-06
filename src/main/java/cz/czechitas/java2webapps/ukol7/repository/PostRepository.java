@@ -10,18 +10,12 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface PostRepository  extends JpaRepository<Post, Long>{
+public interface PostRepository extends JpaRepository<Post, Long> {
 
     @Query("SELECT p FROM Post p WHERE p.published is not null AND p.published< current date order by p.published desc ")
-    Page<Post> findByOrderByPublishedDesc( Pageable pageable);
+    Page<Post> findByOrderByPublishedDesc(Pageable pageable);
 
-
-    Optional<Post> findBySlug(String slug);
 
     Page<Post> findBySlug(String slug, Pageable pageable);
-
-
-
-
 
 }

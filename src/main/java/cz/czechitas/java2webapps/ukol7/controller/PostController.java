@@ -26,20 +26,10 @@ public class PostController {
     }
 
 
-/*
   @GetMapping( "/{slug}")
     public ModelAndView detail( @PathVariable String slug, @PageableDefault Pageable pageable){
         return new ModelAndView("detail")
-                .addObject("slug",service.singlePost(slug, pageable));
+                .addObject("prispevek",service.singlePost(slug, pageable));
   }
-
- */
-    @GetMapping("/{slug}")
-    public ModelAndView detail(@PathVariable String slug) {
-        return new ModelAndView("detail")
-                .addObject("slug", service.jedenPost(slug));
-    }
-
-
 
 }
